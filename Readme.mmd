@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant User
+    participant Server
+
+    User->>Server: Send login request with email and password
+    Server->>Server: Verify email and password
+    Server-->>User: Send authentication success message
+
+    User->>Server: Send registration request with first name, last name, phone number, email, and password
+    Server->>Server: Verify email and password do not already exist
+    Server->>Server: Create new user account with first name, last name, phone number, email, and password
+    Server-->>User: Send registration success message
